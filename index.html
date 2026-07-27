@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Adulting</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="astros-header">
+        <div class="stripe navy"></div>
+        <div class="stripe orange"></div>
+        <div class="stripe light-orange"></div>
+        <div class="stripe yellow"></div>
+        <h1>ADULTING</h1>
+    </header>
+
+    <main id="app-content">
+        <!-- Navigation Grid -->
+        <div class="menu-grid" id="main-menu">
+            <button class="menu-btn" onclick="openModule('life')">LIFE</button>
+            <button class="menu-btn" onclick="openModule('finance')">FINANCIAL</button>
+            <button class="menu-btn" onclick="openModule('health')">HEALTH</button>
+            <button class="menu-btn" onclick="openModule('car')">CAR</button>
+        </div>
+
+        <!-- Life Module -->
+        <section id="life" class="module hidden">
+            <h2>Life Management</h2>
+            <div class="card">
+                <h3>Daily Goal</h3>
+                <input type="text" id="daily-goal" placeholder="Enter your single goal...">
+                <button onclick="saveGoal()">Set Goal</button>
+                <p id="goal-status">Success Rate: 85%</p>
+            </div>
+            <div class="card">
+                <h3>Spiritual</h3>
+                <button class="action-btn">Daily Prayer</button>
+                <button class="action-btn">Daily Readings</button>
+            </div>
+            <div class="card reminder-card">
+                <h3>Weekly Reminder</h3>
+                <p>Call Holly!</p>
+                <button class="action-btn">Mark Done</button>
+            </div>
+            <button class="back-btn" onclick="goHome()">Back to Menu</button>
+        </section>
+
+        <!-- Financial Module -->
+        <section id="finance" class="module hidden">
+            <h2>Financial Center</h2>
+            <div class="card">
+                <h3>Budget Setup (Encrypted)</h3>
+                <select id="budget-timeframe">
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>Yearly</option>
+                </select>
+                <ul class="budget-list">
+                    <li>Income: <input type="number" placeholder="$"></li>
+                    <li>Housing: <input type="number" placeholder="$"></li>
+                    <li>Utilities: <input type="number" placeholder="$"></li>
+                    <li>Car (Gas, Maint, Ins): <input type="number" placeholder="$"></li>
+                    <li>Food (Groceries): <input type="number" placeholder="$"></li>
+                    <li>Food (Out): <input type="number" placeholder="$"></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Bank Connections</h3>
+                <button class="action-btn plaid-btn">Sync Chevron FCU</button>
+                <button class="action-btn plaid-btn">Sync Capital One</button>
+            </div>
+            <button class="back-btn" onclick="goHome()">Back to Menu</button>
+        </section>
+
+        <!-- Health Module -->
+        <section id="health" class="module hidden">
+            <h2>Health Records</h2>
+            <div class="card">
+                <h3>Appointments</h3>
+                <label>Last Dentist: <input type="date"></label>
+                <p class="alert">Next cleaning due: Oct 15</p>
+                <label>Last Physical: <input type="date"></label>
+            </div>
+            <div class="card">
+                <h3>Medications & Immunizations</h3>
+                <button class="action-btn">Track Prescriptions</button>
+                <button class="action-btn">Upload Immunization Record</button>
+            </div>
+            <div class="card">
+                <h3>Fitness</h3>
+                <button class="action-btn">Generate Workout Schedule</button>
+            </div>
+            <button class="back-btn" onclick="goHome()">Back to Menu</button>
+        </section>
+
+        <!-- Car Module -->
+        <section id="car" class="module hidden">
+            <h2>Car Maintenance</h2>
+            <div class="card">
+                <h3>Oil Change Tracker</h3>
+                <label>Last Change Date: <input type="date"></label>
+                <label>Mileage at Change: <input type="number"></label>
+                <p class="alert">Reminder set for 10k miles or 1yr</p>
+            </div>
+            <div class="card">
+                <h3>Fuel & MPG Log</h3>
+                <input type="number" placeholder="Total Mileage">
+                <input type="number" placeholder="Gallons">
+                <input type="number" placeholder="Total Cost ($)">
+                <button class="action-btn">Log Fill-up</button>
+            </div>
+            <div class="card">
+                <h3>MPG Control Chart</h3>
+                <div class="chart-placeholder">[Chart.js Renders Here]</div>
+            </div>
+            <button class="back-btn" onclick="goHome()">Back to Menu</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
